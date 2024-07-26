@@ -8,10 +8,10 @@ body {
 }
 
 .item-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 40px;
-  justify-items: center;
+  justify-content: center;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -21,7 +21,7 @@ body {
 .item {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: calc(33.33% - 40px);
   text-align: left;
 }
 
@@ -53,17 +53,14 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .item-list {
-    grid-template-columns: repeat(2, 1fr);
+  .item {
+    width: calc(50% - 40px);
   }
 }
 
 @media (max-width: 768px) {
-  .item-list {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
   .item {
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
   }
